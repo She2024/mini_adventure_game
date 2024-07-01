@@ -13,7 +13,7 @@
 #       print("There's a card on the table that says 'Time stands still as do you. Pick up a cup but only 1 and test your luck.")
 # else:
 #       print("You've seen too many horror movies and that table looks like a trap. You scan for an exit out of this room")
-# print("You can go left, right, up or down.Which way would you like to go?")
+# print("You can go left, right, up or down. Which way would you like to go?")
 # while userInput not in fractions:
 #     print("Options: left/right/up/down")
 #     userInput = input()
