@@ -16,7 +16,7 @@
 # ### Ask for users name
 
 # player_name = input("Please enter your name:")
-# print(f"'{player_name}, my name is {player_name}!!'")
+# print(f"What's my name... Oh'{player_name}, my name is {player_name}!!'")
 
 # ## Set the scene
 # print("There's a thick layer of dust over everything, and it appears you're all alone, but you spot a table in the corner of the room that looks out of place.")
@@ -35,7 +35,7 @@
 #       user_guess = int(input("What's your guess cup, 1, 2 or 3)? Enter the number: "))
 
 #       if user_guess == guess_num:
-#          print(f”Congratulations {player_name}! You've just found a bonus point that can be used to get you out of danger, use it wisely")
+#          print(f"Congratulations {player_name}! You've just found a single use key that can be used to get you out of danger, use it wisely")
 #          bonus += 1
 #          ## add code for bonus point tracker
 #       else:
@@ -60,7 +60,8 @@
 #      time.sleep(3)
 #      print("Suddenly the door behind you closes a faint click of lock engaging is heard! To open the door and return to  the main hall you must correctly answer a riddle.")
 #      time.sleep(3)
-#      print("You look around the room and see there is a second door, you don't know where it leads or what danger lays in wait. Do you want to go through the door and deeper into the lab? Enter yes or no: ")
+#      print("You look around the room and see there is a second door, you don't know where it leads or what danger lays in wait.")
+#      print("Do you want to go through the door and deeper into the lab? Enter yes or no: ")
      
 #      if(labChoice == "yes"):
 
