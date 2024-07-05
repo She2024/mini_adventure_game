@@ -1,6 +1,28 @@
 import time
 
 
+def playGame() :
+    input = ["yes", "no"]
+    play = input()           
+    if play == "yes":
+      guessButton = "b"
+      userGuess = ["a","b","c"]
+      print("The buttons are flashing randomly. The instructions say 'Only 1 button can be pressed before a full system reset is required.")
+      time.sleep(3)
+      print("It's just too tempting you can't help it you press a button")
+      userGuess = int(input("What button do you press, a, b or c?)? Enter the letter: "))
+      if userGuess == guessButton:
+        print(f"Congratulations {name}! You've just turned on the lights to the building. That should help navigate safely… right?")
+        print("One point awarded")
+        bonus += 1
+        #add in code to collect score
+      else:
+        print("Too bad! No points awarded")
+    else:
+     print("You've seen too many horror movies and that table looks like a trap. You scan for an exit out of this room")
+    #reception()
+    quit()
+
 
 if __name__ == "__main__":
     while True:
@@ -15,7 +37,7 @@ if __name__ == "__main__":
         time.sleep (4)
         print("Standing at the main reception desk you notice are three buttons labelled A, B, and C. You have no idea what they do.")
         time.sleep (3)
-        print("It's just too tempting you can't help it you press a button")
-        #playGame()
-        quit()
+        print("It's so tempting you really want to press a button")
+        playGame()
+        #quit()
         
