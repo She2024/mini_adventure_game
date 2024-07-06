@@ -3,6 +3,22 @@ import time
 global score
 
 
+def courtRoom():
+  directions = ["right","up"]
+  print("You've enter the old court rooms with beautiful timber furniture and bronze plaques. You can feel the negative energy of the crimes heard here.")
+  print("You are creeped out. Where would you like to go?")
+  userInput = ""
+  while userInput not in directions:
+    print("Options: right/left/up")
+    userInput = input()
+    if userInput == "up":
+      holdingCells()
+    elif userInput == "left":
+      print("You find that this door opens into a wall.")
+    elif userInput == "right":
+      reception()
+    else:
+      print("Please enter a valid option.")
 
 
 
@@ -44,7 +60,8 @@ def playGame() :
             print(f"Congratulations {name}! You've just turned on the lights to the building. That should help navigate safely… right?")
             print("One point awarded")
             score = score + 1
-                
+            print(f"{name} current score:")
+            print(score)    
       else:
         print("Too bad! No points awarded")
     else:
