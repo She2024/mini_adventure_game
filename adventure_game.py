@@ -1,5 +1,5 @@
 import time
-
+#score = 0
 
 def playGame() :
     play = ["yes", "no"]
@@ -8,15 +8,16 @@ def playGame() :
     if play == "yes":
       guessButton = "b"
       userGuess = ["a","b","c"]
-      print("The buttons are flashing randomly. The panel says the buttons turn on lights and intercoms and a full system reset but the panel is worn and the button names are gone.")
-      time.sleep(3)
+      print("The buttons are flashing randomly.")
+      print("The panel says the buttons turn on lights and intercoms and a full system reset but the panel is worn and the button names are gone.")
+      time.sleep(1)
       print("It's just too tempting you can't help it you press a button. What button do you press, a, b or c? Enter the letter: ")
       userGuess = input()
       if userGuess == guessButton:
             print(f"Congratulations {name}! You've just turned on the lights to the building. That should help navigate safely… right?")
             print("One point awarded")
-            #bonus += 1
-            #add in code to collect score
+            #score = score + 1
+                
       else:
         print("Too bad! No points awarded")
     else:
@@ -24,6 +25,7 @@ def playGame() :
     #reception()
     quit()
 
+#print(score)
 
 if __name__ == "__main__":
     while True:
@@ -33,11 +35,11 @@ if __name__ == "__main__":
         name = input()
         print(f"Good luck, {name}. Score to beat is: No High score recored.")
         print("Camping in the outback you come across an abandoned town.")
-        time.sleep (3)
+        time.sleep (1)
         print("You decide to explore the old government building. It appears to have served a range of services from including the council chambers and the coroners office.")
-        time.sleep (4)
+        time.sleep (1)
         print("Standing at the main reception desk you notice are three buttons labelled A, B, and C. You have no idea what they do.")
         playGame()
        
        
-        
+    
