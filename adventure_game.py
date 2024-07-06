@@ -1,7 +1,34 @@
 import time
-#score = 0
+
+global score
+
+
+
+
+
+def reception():
+  directions = ["left","right","down"]
+  print("Standing in the main reception area there's nothing much to see. It looks like someone cleared this place out years ago.")
+  print("You have to pick a hallway. Which direction do walk?")
+  userInput = ""
+  while userInput not in directions:
+    print("Options: left/right/up/forward")
+    userInput = input()
+    if userInput == "left":
+      courtRoom()
+    elif userInput == "right":
+      library()
+    elif userInput == "down":
+      coronerOffice()
+    elif userInput == "up":
+      print("You find that this door opens into a wall.")
+    else: 
+      print("Please enter a valid option.")
+
+
 
 def playGame() :
+    score = 0
     play = ["yes", "no"]
     print("It's so tempting, do you press a button? Enter yes or no:")
     play = input()           
@@ -16,18 +43,20 @@ def playGame() :
       if userGuess == guessButton:
             print(f"Congratulations {name}! You've just turned on the lights to the building. That should help navigate safely… right?")
             print("One point awarded")
-            #score = score + 1
+            score = score + 1
                 
       else:
         print("Too bad! No points awarded")
     else:
         print("You've seen too many horror movies and that table looks like a trap. You scan for an exit out of this room")
-    #reception()
-    quit()
+    reception()
+   
 
-#print(score)
+
+
 
 if __name__ == "__main__":
+   
     while True:
         print ("Welcome to the Outback Ghost Town.")
         print("There are questions or challenges to complete to obtain points and you navigate through rooms by choosing to walk, left, right, up or down.")
