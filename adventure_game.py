@@ -1,6 +1,35 @@
 import time
 
-global score
+def score():
+  score = 0
+
+global key
+
+def holdingCells():
+  global key
+  directions = ["down","up"]
+  print("You've taken a wrong turn and find yourself in the holding cells. You thought the court room felt bad, this place feels like pure evil.")
+  print("The cell door locks behind you and you're confronted with the ghost of notorious cannibal Thomas Jeffrey.")
+  print("Where would you like to go?")
+  userInput = ""
+  while userInput not in directions:
+    print("Options: down/up")
+    userInput = input()
+    if userInput == "up":
+      if key:
+        print("Panic floods you and your struggling to think. You use the skeleton key to escape the cell just in time. Congrats!")
+        print(f"{name} current score:'{score}")
+            
+      else:
+        print("This was not the adventure you had in mind. Face to face with pure evil you feel his spectral hand enter your chest and clamp down on your heart. You die.")
+        print
+      quit()
+    elif userInput == "up":
+      courtRoom()  
+    elif userInput == "down":
+      courtRoom()
+    else:
+      print("Please enter a valid option.")
 
 
 def courtRoom():
