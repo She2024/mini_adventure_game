@@ -5,6 +5,70 @@ def score():
 
 global key
 
+def librarian():
+  actions = ["answer","flee"]
+  global key
+  print("A librarian appears before you with a riddle, she seems friendly and you have no fear of her. You can answer or flee. What would you like to do?")
+  userInput = ""
+  while userInput not in actions:
+    print("Options: flee/answer")
+    userInput = input()
+    if userInput == "answer":
+      if key:
+        print("The riddle is 'I watch you sleep, I haunt you by day. You stare at me and saw nothing, but darkness. What am I?' Enter your answer to escape the room:")
+        riddle = input()
+      if userInput == "answer":
+        if(riddle == "fear"):
+            print("Correct answer. The door opens and you escape the library. Grateful to have found the exit you never want to explore abandoned locations again.")
+            print("One point awarded")
+      else:
+        print("Angered by your incorrect answer she killed you.")
+      quit()
+    elif userInput == "flee":
+      library()
+    else:
+      print("Please enter a valid option.")
+
+def library():
+  directions = ["left","right"]
+  global key
+  print("Half the bookshelves are empty and random papers cover the floor. Someone is watching you. Where would you like to go?")
+  userInput = ""
+  while userInput not in directions:
+    print("Options: left/right/down")
+    userInput = input()
+    if userInput == "down":
+      print("You open the filing cabinet in front of you and among the dusty trinkets and papers you find a key.")
+      print("The tag says it's a skeleton key, it must open all the  locks to the building.")
+      key = True
+    elif userInput == "left":
+      reception()
+    elif userInput == "right":
+      librarian()
+    else:
+      print("Please enter a valid option.")
+
+
+def coronerOffice():
+  directions = ["left","up"]
+  print("This is awesome! You find yourself in the coroners office. It still has furniture and files, why would they leave all this behind?")
+  print("You hear some scraping sounds but as the sound echoes around the room your not sure where it's coming from. Which direction do you go?")
+  userInput = ""
+  while userInput not in directions:
+    print("Options: left/up")
+    userInput = input()
+    if userInput == "left":
+      print("Your now in the morgue. A showy figure in a medical gown appears before you, like a scene out of '13 Ghosts'.")
+      print("You scream and run face first into an open freezer door knocking yourself out. There is no way you're getting out alive.")
+      print(f"Bad luck, {name}.")
+      print(score)
+      quit()
+    elif userInput == "up":
+      reception()
+    else:
+      print("Please enter a valid option.")
+
+
 def holdingCells():
   global key
   directions = ["down","up"]
@@ -19,7 +83,7 @@ def holdingCells():
       if key:
         print("Panic floods you and your struggling to think. You use the skeleton key to escape the cell just in time. Congrats!")
         print(f"{name} current score:'{score}")
-            
+        courtRoom()   
       else:
         print("This was not the adventure you had in mind. Face to face with pure evil you feel his spectral hand enter your chest and clamp down on your heart. You die.")
         print
@@ -57,7 +121,7 @@ def reception():
   print("You have to pick a hallway. Which direction do walk?")
   userInput = ""
   while userInput not in directions:
-    print("Options: left/right/up/forward")
+    print("Options: left/right/up/down")
     userInput = input()
     if userInput == "left":
       courtRoom()
