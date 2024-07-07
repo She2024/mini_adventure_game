@@ -6,6 +6,43 @@ import os
 global score
 score = 0
 
+from src.operations import load_score,save_score
+from src.game_score import display_score, add_score, high_scoring_game
+
+# This file path works when you run the program from the executable file
+FILE_PATH = './data/highest_score_log.json' 
+# IF you run just the main.py file from python3 main.py, you fetch the file like this:
+
+def main():
+    score = load_score(FILE_PATH)
+
+    if not score:
+        print("No scores loaded or an error occured. Exiting.")
+        return
+    while True:
+        print("The score to beat is:")
+        print("1. Display scoreboard")
+        print("2. Add a new match")
+        print("3. Display high-scoring matches")
+        print("4: Save and Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            score(score)
+        elif choice == '2':
+            add_score(score)
+        elif choice == '3':
+            high_scoring = high_scoring(score, 3)
+            display_score(high_scoring)
+        elif choice == '4':
+            try:
+                save_score(FILE_PATH, score)
+                break
+            except Exception as e:
+                print(f"Error saving score: {e}")
+        else:
+            print("Invalid choice, please try again.")  
   
 
 global key
@@ -30,7 +67,7 @@ def riddle():
     
   quit()
 
-
+# Function for 
 def librarian():
   actions = ["answer","flee"]
   print("A librarian appears before you with a riddle, she seems friendly and you have no fear of her. You can answer or flee. What would you like to do?")
@@ -43,7 +80,7 @@ def librarian():
     elif userInput == "flee":
       library()
     else:
-      print("Please enter a valid option.")
+      print("Invalid option.")
 
 def library():
   directions = ["left","right","up","down"]
@@ -173,7 +210,7 @@ def playGame() :
             print(f"Congratulations {name}! You've just turned on the lights to the building. That should help navigate safely… right?")
             print("One point awarded")
             score = score + 1
-            print(f"{name} current score:")
+            print(f"{name} current score: {score}")
             print(score)    
       else:
         print("Too bad! No points awarded")
@@ -199,4 +236,4 @@ if __name__ == "__main__":
         playGame()
        
        
-    
+  
