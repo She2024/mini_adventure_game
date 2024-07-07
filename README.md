@@ -18,4 +18,4 @@
 
  1. Open the terminal or command line and move into the file with the saved python script.
  2. Run the python command: python3 adventure_game.py
- 3. The game should run, follow the prompts and enjoy.
+ 3. The game should run, follow the prompts and enjoy. 

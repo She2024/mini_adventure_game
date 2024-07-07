@@ -27,7 +27,7 @@ def main():
         print("4: Save and Exit")
 
         choice = input("Choose an option: ")
-
+ 
         if choice == '1':
             score(score)
         elif choice == '2':
@@ -237,3 +237,4 @@ if __name__ == "__main__":
        
        
   
+ 
